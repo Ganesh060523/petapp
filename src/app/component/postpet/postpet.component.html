@@ -1,0 +1,61 @@
+<div class="container d-flex justify-content-center p-5">
+  <div class="form-container">
+    <form [formGroup]="petForm" (ngSubmit)="onSubmit()">
+      <h2>Add a New Pet</h2>
+
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input id="name" type="text" placeholder="Enter pet name" formControlName="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="type">Type:</label>
+        <select id="type" formControlName="type" required>
+          <option value="" disabled>Select pet type</option>
+          <option value="Dog">Dog</option>
+          <option value="Cat">Cat</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="breed">Breed:</label>
+        <input id="breed" type="text" placeholder="Enter pet breed" formControlName="breed" required />
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input id="age" type="number" placeholder="Enter pet age" formControlName="age" min="0" required />
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select id="gender" formControlName="gender" required>
+          <option value="" disabled>Select gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" placeholder="Write a brief description" formControlName="description" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <select id="status" formControlName="status" required>
+          <option value="" disabled>Select status</option>
+          <option value="AVAILABLE">Available</option>
+          <option value="ADOPTED">Adopted</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="imageFile">Upload Image:</label>
+        <input id="imageFile" type="file" accept="image/*" multiple (change)="onFileChange($event)" formControlName="imageFile" required />
+      </div>
+
+      <button type="submit" [disabled]="petForm.invalid">Submit</button>
+    </form>
+  </div>
+</div>

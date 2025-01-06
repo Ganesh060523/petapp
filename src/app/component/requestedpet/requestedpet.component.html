@@ -1,0 +1,30 @@
+
+<div class="requested-pets-container">
+    <h2>Pets I Requested</h2>
+    <table class="requested-pets-table">
+      <thead>
+        <tr>
+          <th>Request ID</th>
+          <th>Pet Name</th>
+          <th>Type</th>
+          <th>Breed</th>
+          <th>Age</th>
+          <th>Status</th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of requestedPets">
+          <td>{{ item.request.id }}</td>
+          <td>{{ item.pet.name }}</td>
+          <td>{{ item.pet.type }}</td>
+          <td>{{ item.pet.breed }}</td>
+          <td>{{ item.pet.age }}</td>
+          <td>{{ item.request.status }}</td>
+          <td>{{ item.request.remarks }}</td>
+        </tr>
+      </tbody>
+      
+    </table>
+  </div>
+  

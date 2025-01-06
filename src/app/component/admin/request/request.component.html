@@ -1,0 +1,23 @@
+<div class="request-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Pet ID</th>
+          <th>Status</th>
+          <th>Date</th>
+          <th>User ID</th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of requests">
+          <td>{{ request.petId }}</td>
+          <td>{{ request.status }}</td>
+          <td>{{ request.requestDate }}</td>
+          <td>{{ request.userId }}</td>
+          <td>{{ request.remarks }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

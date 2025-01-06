@@ -1,0 +1,109 @@
+<div class="container mt-5">
+  <div class="row">
+    <!-- Left Column: Pet Details -->
+    <div class="col-md-6">
+      <div *ngIf="isLoading" class="loading">Loading...</div>
+
+      <div *ngIf="pet && !isLoading" class="pet-details">
+        <!-- Carousel for Pet Images -->
+        <div id="petImageCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item" *ngFor="let imageUrl of pet.imageUrls; let i = index" [class.active]="i === 0">
+              <img [src]="baseURL + imageUrl" class="d-block w-100" [alt]="pet.name + ' Image'" />
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#petImageCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#petImageCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <!-- Pet Details -->
+        <div class="product-details mt-4">
+          <h1>{{ pet.name }}</h1>
+          <p><strong>Type:</strong> {{ pet.type }}</p>
+          <p><strong>Breed:</strong> {{ pet.breed }}</p>
+          <p><strong>Age:</strong> {{ pet.age }}</p>
+          <p><strong>Gender:</strong> {{ pet.gender }}</p>
+          <p><strong>Description:</strong> {{ pet.description }}</p>
+          <p><strong>Status:</strong> {{ pet.status }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Request Form and Comments -->
+    <div class="col-md-6">
+      <!-- Request Form -->
+      <div class="request-form">
+        <h4>Request This Pet</h4>
+        <form (ngSubmit)="submitAdoptionRequest()" #petRequestForm="ngForm">
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" name="description" [(ngModel)]="adoptionRequest.remarks" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Request</button>
+        </form>
+      </div>
+
+      <!-- Add Comment Section -->
+      <div class="mt-4">
+        <h3 class="mb-3">Post a Comment</h3>
+        <form (ngSubmit)="addComment()">
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              [(ngModel)]="newCommentContent"
+              name="comment"
+              placeholder="Write your comment here"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary mt-2">Post Comment</button>
+        </form>
+      </div>
+
+      <!-- Display Comments -->
+      <div class="mt-4">
+        <h4>Comments</h4>
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="commentsDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            View Comments
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="commentsDropdown">
+            <li *ngFor="let comment of comments" class="dropdown-item">
+              <h5>{{ comment.uname }}</h5>
+              <p>{{ comment.content }}</p>
+              <p class="text-muted small">
+                Posted on {{ comment.createdDate | date: 'short' }}
+              </p>
+
+              <!-- Edit and Delete Icons -->
+              <div class="d-flex justify-content-between">
+                <!-- Edit Icon -->
+                <button class="btn btn-link" (click)="startEditingComment(comment)">
+                  <i class="bi bi-pencil-square"></i> Edit
+                </button>
+
+                <!-- Delete Icon -->
+                <button class="btn btn-link" (click)="deleteComment(comment.id)">
+                  <i class="bi bi-trash"></i> Delete
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

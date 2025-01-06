@@ -1,0 +1,27 @@
+<div class="pet-container">
+    <table>
+      <thead>
+        <tr>
+            <th>ID</th>
+          <th>Name</th>
+          <th>Breed</th>
+          <th>Status</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Owner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pet of pets">
+            <td>{{ pet.id }}</td>
+          <td>{{ pet.name }}</td>
+          <td>{{ pet.breed }}</td>
+          <td>{{ pet.status }}</td>
+          <td>{{ pet.age }}</td>
+          <td>{{ pet.gender }}</td>
+          <td>{{ pet.owner.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

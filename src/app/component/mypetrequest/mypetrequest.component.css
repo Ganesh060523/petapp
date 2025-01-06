@@ -1,0 +1,97 @@
+/* General container styling */
+.requests-container {
+  width: 100%;
+  max-width: 1200px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+}
+
+.requests-container h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Table styling */
+.requests-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.requests-table th,
+.requests-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+  color: #333333;
+}
+
+.requests-table th {
+  background-color: #007bff;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.requests-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Action buttons styling */
+.requests-table button {
+  padding: 8px 15px;
+  font-size: 1rem;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.accept-btn {
+  background-color: #28a745; /* Green for accept */
+  color: #ffffff;
+}
+
+.accept-btn:hover {
+  background-color: #218838;
+}
+
+.accept-btn:disabled {
+  background-color: #e2e6ea; /* Disabled state */
+  cursor: not-allowed;
+}
+
+.reject-btn {
+  background-color: #dc3545; /* Red for reject */
+  color: #ffffff;
+}
+
+.reject-btn:hover {
+  background-color: #c82333;
+}
+
+.reject-btn:disabled {
+  background-color: #e2e6ea; /* Disabled state */
+  cursor: not-allowed;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .requests-table th,
+  .requests-table td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .requests-table button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}

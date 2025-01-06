@@ -1,0 +1,76 @@
+/* Container for the requested pets section */
+.requested-pets-container {
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 90%;
+  overflow-x: auto;
+}
+
+/* Title of the section */
+.requested-pets-container h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Table Styling */
+.requested-pets-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Table Headers */
+.requested-pets-table th {
+  background-color: #0066cc;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Table Rows */
+.requested-pets-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Hover effect for rows */
+.requested-pets-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Make the table responsive */
+@media (max-width: 768px) {
+  .requested-pets-table th,
+  .requested-pets-table td {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* Stack the table headers on smaller screens */
+  .requested-pets-table th {
+    display: none;
+  }
+
+  .requested-pets-table td {
+    display: block;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .requested-pets-table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}

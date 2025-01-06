@@ -1,0 +1,37 @@
+<div class="container d-flex justify-content-center p-5">
+<div class="edit-pet-container ">
+    <h2>Edit Pet</h2>
+    <form (ngSubmit)="savePet()">
+      <label>
+        Name:
+        <input [(ngModel)]="pet.name" name="name" required />
+      </label>
+      <label>
+        Type:
+        <input [(ngModel)]="pet.type" name="type" required />
+      </label>
+      <label>
+        Breed:
+        <input [(ngModel)]="pet.breed" name="breed" required />
+      </label>
+      <label>
+        Age:
+        <input [(ngModel)]="pet.age" name="age" type="number" required />
+      </label>
+      <label>
+        Gender:
+        <input [(ngModel)]="pet.gender" name="gender" required />
+      </label>
+      <label>
+        Description:
+        <textarea [(ngModel)]="pet.description" name="description" required></textarea>
+      </label>
+      <label>
+        Status:
+        <input [(ngModel)]="pet.status" name="status" required />
+      </label>
+      <button type="submit">Save</button>
+      <button type="button" (click)="router.navigate(['home/mypet'])">Cancel</button>
+    </form>
+  </div>
+</div>

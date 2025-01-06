@@ -1,0 +1,55 @@
+<div class="container d-flex justify-content-center p-5">
+<div class="register-container">
+    <div class="register-card">
+      <h2>Create Your Account</h2>
+      <form (ngSubmit)="onRegister()">
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            [(ngModel)]="registerRequest.email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+  
+        <!-- Password Field -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            [(ngModel)]="registerRequest.password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+  
+        <!-- Role Selection -->
+        <div class="form-group">
+          <label for="role">Role</label>
+          <select
+            id="role"
+            [(ngModel)]="registerRequest.role"
+            name="role"
+            required
+          >
+            <option value="OWNER">OWNER</option>
+            <option value="VOLUNTEER">VOLUNTEER</option>
+        
+          </select>
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="submit" class="btn-register">Register</button>
+      </form>
+      <div class="extra-links">
+        <a href="home/login">Already have an account? Login here</a>
+      </div>
+    </div>
+  </div>
+</div>

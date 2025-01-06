@@ -1,0 +1,201 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Left Column: Pet Details */
+.pet-details {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.product-details h1 {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.product-details p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.carousel-inner img {
+  border-radius: 8px;
+  height: 350px;
+  object-fit: cover;
+}
+
+/* Right Column: Request Form and Comments - Align to Left */
+.col-md-6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Request Form */
+.request-form {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 500px;
+  align-self: flex-start; /* Align form to left */
+}
+
+.request-form h4 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.request-form .form-label {
+  font-size: 1rem;
+  color: #555;
+}
+
+.request-form .form-control {
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+}
+
+.request-form .btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-size: 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.request-form .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Add Comment Section */
+.mt-4 {
+  margin-top: 30px;
+}
+
+h3 {
+  font-size: 1.7rem;
+  color: #007bff;
+}
+
+textarea.form-control {
+  resize: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+}
+
+button.btn-primary.mt-2 {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  font-size: 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-primary.mt-2:hover {
+  background-color: #0056b3;
+}
+
+/* Display Comments */
+.dropdown-menu {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+  padding: 10px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item h5 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.dropdown-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.text-muted.small {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.d-flex.justify-content-between {
+  margin-top: 10px;
+}
+
+.btn.btn-link {
+  color: #007bff;
+  font-size: 1rem;
+  padding: 0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.btn.btn-link:hover {
+  color: #0056b3;
+}
+
+/* Loading Spinner */
+.loading {
+  font-size: 1.5rem;
+  color: #007bff;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .pet-details,
+  .request-form {
+    padding: 15px;
+  }
+
+  .carousel-inner img {
+    border-radius: 6px;
+  }
+}

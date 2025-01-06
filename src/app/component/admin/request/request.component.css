@@ -1,0 +1,59 @@
+.request-container {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f1c40f; /* Yellow background */
+    font-weight: bold;
+    font-size: 16px;
+    color: white; /* White text color */
+  }
+  
+  td {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  tbody tr:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #fafafa;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f1f1f1;
+  }
+  
+  tbody tr.selected {
+    background-color: #e0f7fa;  /* Highlight the selected row */
+  }
+  
+  @media (max-width: 768px) {
+    table {
+      font-size: 12px;
+    }
+  
+    th, td {
+      padding: 10px;
+    }
+  }
+  

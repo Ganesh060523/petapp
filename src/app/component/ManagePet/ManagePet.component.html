@@ -1,0 +1,26 @@
+<!-- pet.component.html -->
+<div class="pet-container">
+  <div class="pet-header">
+    <h1>Welcome, <span id="username">{{ username }}</span>!</h1>
+    <p>Your personalized pet adoption dashboard</p>
+  </div>
+
+  <div class="pet-sections">
+    
+
+    <div class="pet-card" id="myPets" (click)="goToPet()">
+      <h2>My Pets</h2>
+      <p>Manage the pets you've added for adoption</p>
+    </div>
+
+    <div class="pet-card" id="myPetRequests" (click)="goToMypet()">
+      <h2>My Pets' Requests</h2>
+      <p>See requests for adoption of your pets</p>
+    </div>
+
+    <div class="pet-card" id="requestedPets" (click)="goToMyreq()">
+      <h2>I Requested Pets</h2>
+      <p>Check the status of pets you've requested</p>
+    </div>
+  </div>
+</div>

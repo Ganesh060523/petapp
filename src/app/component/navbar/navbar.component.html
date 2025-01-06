@@ -1,0 +1,36 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <!-- Logo -->
+    <a routerLink="/home" class="navbar-logo">
+      <img src="logo.jpg" alt="Pet Lovers Logo" />
+    </a>
+
+    <!-- User Actions -->
+    <div class="navbar-actions">
+
+      <!-- Navigation Links -->
+      <ul class="navbar-links">
+        <li><a routerLink="/home">Home</a></li>
+        <li><a routerLink="/home/postpet">Post Pet</a></li>
+        <li *ngIf="isAdmin" class="admin-link"><a routerLink="/admin">Admin</a></li>
+      </ul>
+
+      <ng-container *ngIf="authService.isLoggedIn(); else loggedOut">
+        <div class="dropdown" (click)="toggleDropdown($event)">
+          <div class="profile-circle">{{ userFirstLetter }}</div>
+          <div *ngIf="dropdownOpen" class="dropdown-menu">
+            <span class="user-name">YourName:{{ user.name }}</span>
+            <a routerLink="/home/profile">Profile</a>
+            <a routerLink="/home/managePet">Manage Pet</a>
+            <a href="#" (click)="onLogout()" routerLink="/">Logout</a>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-template #loggedOut>
+        <a routerLink="/home/login" class="btn-login">Login</a>
+        <a routerLink="/home/register" class="btn-register">Sign Up</a>
+      </ng-template>
+    </div>
+  </div>
+</nav>

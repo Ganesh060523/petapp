@@ -1,0 +1,102 @@
+/* General container styling */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f8f9fa; /* Light gray background */
+}
+
+.pets-container {
+  width: 100%;
+  max-width: 1200px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styling */
+.pets-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.pets-table th,
+.pets-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+  color: #333333;
+}
+
+.pets-table th {
+  background-color: #007bff;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.pets-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Action buttons styling */
+.pets-table button {
+  padding: 8px 15px;
+  font-size: 1rem;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.pets-table button:first-child {
+  background-color: #007bff; /* Edit button blue */
+  color: #ffffff;
+}
+
+.pets-table button:first-child:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.pets-table button:last-child {
+  background-color: #dc3545; /* Delete button red */
+  color: #ffffff;
+}
+
+.pets-table button:last-child:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+/* No pets message styling */
+.ng-template p {
+  font-size: 1.2rem;
+  color: #6c757d;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Header Styling */
+.pets-container h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .pets-table th,
+  .pets-table td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .pets-table button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}

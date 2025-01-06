@@ -1,0 +1,87 @@
+<div class="profile-container">
+  <h2>My Profile</h2>
+
+  <!-- Info Display -->
+  <div *ngIf="!isEditing; else editForm">
+    <div class="info-group">
+      <label>Name:</label>
+      <span>{{ user?.name }}</span>
+    </div>
+    <div class="info-group">
+      <label>Email:</label>
+      <span>{{ user?.email }}</span>
+    </div>
+    <div class="info-group">
+      <label>Phone:</label>
+      <span>{{ user?.phone }}</span>
+    </div>
+    <div class="info-group">
+      <label>Address:</label>
+      <span>{{ user?.address }}</span>
+    </div>
+    <div class="info-group">
+      <label>Role:</label>
+      <span>{{ user?.role }}</span>
+    </div>
+
+    <button type="button" class="btn-edit" (click)="toggleEdit()">Edit</button>
+  </div>
+
+  <!-- Editable Form -->
+  <ng-template #editForm>
+    <form (submit)="saveProfile()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          [(ngModel)]="user.name"
+          name="name"
+          placeholder="Enter your name"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="user.email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input
+          type="text"
+          id="phone"
+          [(ngModel)]="user.phone"
+          name="phone"
+          placeholder="Enter your phone number"
+        />
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea
+          id="address"
+          [(ngModel)]="user.address"
+          name="address"
+          placeholder="Enter your address"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="role">Role:</label>
+        <select id="role" [(ngModel)]="user.role" name="role" required>
+          <option value="OWNER">OWNER</option>
+          <option value="VOLUNTEER">VOLUNTEER</option>
+         
+        </select>
+      </div>
+
+      <button type="submit" class="btn-save">Save</button>
+      <button type="button" class="btn-cancel" (click)="toggleEdit()">Cancel</button>
+    </form>
+  </ng-template>
+</div>

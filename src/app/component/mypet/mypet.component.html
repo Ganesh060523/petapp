@@ -1,0 +1,39 @@
+<div class="container d-flex justify-content-center p-5">
+<div class="pets-container">
+  <h2>My Pets</h2>
+  <table class="pets-table" *ngIf="pets.length > 0; else noPets">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Breed</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pet of pets">
+        <td>{{ pet.id }}</td>
+        <td>{{ pet.name }}</td>
+        <td>{{ pet.type }}</td>
+        <td>{{ pet.breed }}</td>
+        <td>{{ pet.age }}</td>
+        <td>{{ pet.gender }}</td>
+        <td>{{ pet.description }}</td>
+        <td>{{ pet.status }}</td>
+        <td>
+          <button (click)="editPet(pet.id)">Edit</button>
+          <button (click)="deletePet(pet.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #noPets>
+    <p>No pets found.</p>
+  </ng-template>
+</div>
+</div>

@@ -1,0 +1,42 @@
+<div class="requests-container">
+  <h2>My Pet Requests</h2>
+  <table class="requests-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Request Date</th>
+        <th>Status</th>
+        <th>Remarks</th>
+        <th>Pet ID</th>
+        <th>User ID</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let request of adoptionRequests">
+        <td>{{ request.id }}</td>
+        <td>{{ request.requestDate }}</td>
+        <td>{{ request.status }}</td>
+        <td>{{ request.remarks }}</td>
+        <td>{{ request.petId }}</td>
+        <td>{{ request.userId }}</td>
+        <td>
+          <button
+            class="accept-btn"
+            [disabled]="request.status === 'APPROVED'"
+            (click)="acceptRequest(request.id)"
+          >
+            Accept
+          </button>
+          <button
+            class="reject-btn"
+            [disabled]="request.status === 'REJECTED'"
+            (click)="rejectRequest(request.id)"
+          >
+            Reject
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,92 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f8ff; /* Light blue background */
+}
+
+.edit-pet-container {
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.edit-pet-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333333;
+  text-align: center;
+  font-weight: bold;
+}
+
+form label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #555555;
+}
+
+form label input,
+form label textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333333;
+  transition: border-color 0.3s;
+}
+
+form label input:focus,
+form label textarea:focus {
+  border-color: #007bff; /* Blue border on focus */
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+button[type="submit"],
+button[type="button"] {
+  width: 48%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"] {
+  background: #007bff; /* Blue background */
+  margin-right: 4%;
+}
+
+button[type="submit"]:hover {
+  background: #0056b3; /* Darker blue on hover */
+}
+
+button[type="button"] {
+  background: #6c757d; /* Gray background */
+}
+
+button[type="button"]:hover {
+  background: #5a6268; /* Darker gray on hover */
+}
+
+@media (max-width: 576px) {
+  button[type="submit"],
+  button[type="button"] {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
