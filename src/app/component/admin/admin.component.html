@@ -1,35 +1,72 @@
 <div class="dashboard-container">
   <!-- Sidebar -->
   <div class="sidebar">
-    <ul>
-      <li><a routerLink="/home">Home</a></li>
-      <li><a (click)="loadAllUsers()">All Users</a></li>
-      <li><a (click)="loadAllPets()">All Pets</a></li>
-      <li><a (click)="loadAllAdoptionRequests()">All Requests</a></li>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <h2><i class="bi bi-heart"></i> Pet Lovers</h2>
+        <a routerLink="/home" class="nav-link">
+          <i class="bi bi-house-door-fill"></i> Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a (click)="scrollToSection('user')" class="nav-link">
+          <i class="bi bi-people-fill"></i> All Users
+        </a>
+      </li>
+      <li class="nav-item">
+        <a (click)="scrollToSection('pets')" class="nav-link">
+          <i class="bi bi-box-fill"></i> All Pets
+        </a>
+      </li>
+      <li class="nav-item">
+        <a (click)="scrollToSection('request')" class="nav-link">
+          <i class="bi bi-envelope-fill"></i> All Requests
+        </a>
+      </li>
     </ul>
   </div>
-  <div>
-    <h1>Welcome to Admin DashBoard !</h1>
-     <!-- Main Content -->
+
+  <!-- Main Content -->
   <div class="main-content">
+    <h1><i class="bi bi-person-workspace"></i> Welcome to Admin Dashboard!</h1>
+    <hr>
+
     <!-- All Users Card -->
-     
-    <div class="dashboard-card" (click)="loadAllUsers()">
-      <h2>All Users</h2>
+    <div class="dashboard-card">
+      <h2 id="user">All Users</h2>
       <app-user></app-user>
+      <!-- Users by Role Graph -->
+      
     </div>
 
     <!-- All Pets Card -->
-    <div class="dashboard-card" (click)="loadAllPets()">
-      <h2>All Pets</h2>
+    <div class="dashboard-card">
+      <h2 id="pets">All Pets</h2>
       <app-pet></app-pet>
+      <!-- Pets by Type Graph -->
+      
     </div>
 
     <!-- All Requests Card -->
-    <div class="dashboard-card" (click)="loadAllAdoptionRequests()">
-      <h2>All Adoption Requests</h2>
+    <div class="dashboard-card">
+      <h2 id="request">All Adoption Requests</h2>
       <app-request></app-request>
+     
     </div>
   </div>
-  </div>
+  <app-graph
+        [graphData]="userGraphData"
+        [graphType]="'pie'"
+        [graphTitle]="'Users by Role'"
+      ></app-graph>
+      <app-graph
+      [graphData]="petGraphData"
+      [graphType]="'bar'"
+      [graphTitle]="'Pets by Type'"
+    ></app-graph>
+    <app-graph
+        [graphData]="petGraphData"
+        [graphType]="'bar'"
+        [graphTitle]="'Pets by Type'"
+      ></app-graph>
 </div>

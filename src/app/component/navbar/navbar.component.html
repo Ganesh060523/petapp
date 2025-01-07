@@ -11,7 +11,7 @@
       <!-- Navigation Links -->
       <ul class="navbar-links">
         <li><a routerLink="/home">Home</a></li>
-        <li><a routerLink="/home/postpet">Post Pet</a></li>
+        <li *ngIf="!isAdmin"><a routerLink="/home/postpet">Post Pet</a></li>
         <li *ngIf="isAdmin" class="admin-link"><a routerLink="/admin">Admin</a></li>
       </ul>
 
